@@ -1,4 +1,4 @@
-#include "include/vecadd.h"
+#include "vecadd.h"
 #include <cuda_runtime.h>
 
 __global__ void vectorAddKernel(const float* a, const float* b, float* c, int n) {

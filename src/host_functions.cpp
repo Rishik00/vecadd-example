@@ -1,5 +1,5 @@
-#include "include/host_functions.h"
-#include "include/vecadd.h"
+#include "host_functions.h"
+#include "vecadd.h"
 #include <cuda_runtime.h>
 
 void vectorAdd(const float* h_a, const float* h_b, float* h_c, int n) {

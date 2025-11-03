@@ -1,4 +1,4 @@
-#include "include/host_functions.h"
+#include "host_functions.h"
 #include <iostream>
 #include <vector>
 #include <cmath>
