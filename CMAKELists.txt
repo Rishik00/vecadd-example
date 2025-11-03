@@ -4,14 +4,19 @@ project(VecAdd LANGUAGES CXX CUDA)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CUDA_STANDARD 14)
 
-# Add executable
+# Find CUDA
+find_package(CUDAToolkit REQUIRED)
+
 add_executable(vecadd
     src/main.cpp
     src/host_functions.cpp
-    src/kernels/vecadd_kernel.cu
+    src/kernels/vecadd.cu
 )
 
 target_include_directories(vecadd PRIVATE include)
+
+# Link CUDA runtime to make cuda_runtime.h available
+target_link_libraries(vecadd PRIVATE CUDA::cudart)
 
 # Set CUDA architectures (adjust for your GPU)
 set_target_properties(vecadd PROPERTIES CUDA_ARCHITECTURES "75;86")
